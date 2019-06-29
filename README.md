@@ -29,12 +29,9 @@ If you're not in the mood to read, [Laracasts](https://laracasts.com) contains o
 
 ## API  URL 
     
-        #####          Login API's
-    
-- For Login https://gowtham-rest-api-crud.herokuapp.com/login
-- For Register https://gowtham-rest-api-crud.herokuapp.com/register
+-   [API URL's](https://gowtham-rest-api-crud.herokuapp.com)
+   
 
-        #####        CRUD Application API's
 
 We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
  
