@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Employee;
 use Validator;
 use Illuminate\Http\Request;
+use App\Http\Controllers\FileUploadController;
+
 
 class EmployeesController extends Controller {
 
@@ -101,6 +103,26 @@ class EmployeesController extends Controller {
             return response()->json(array('status' => true, 'message' => 'employee_deleted'), 200);
         } catch (\Exception $e) {
             return response()->json(array('message' => 'could_not_update_employee'), 500);
+        }
+    }
+
+
+    public function fileupload(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'file' => 'required'
+        ]);
+        $data = $request->all();
+        if ($validator->fails()) {
+            return response()->json(['status' => 'fail', 'message' => $validator->errors()->all()]);
+        } else {
+            if (isset($data['file'])) {
+                $file = $data['file'];
+                unset($data['file']);
+                $data['image'] = FileUploadController::fileUpload($file, 'uploads/students');
+            }
+            Fileupload::create($data);
+            return response()->json(array('status' => true, 'msg' => 'Successfully created'), 200);
         }
     }
 }

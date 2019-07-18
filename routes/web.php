@@ -25,13 +25,16 @@ Route::get('posts', 'PostController@index');
 Route::get('posts/index', 'PostController@index');
 Route::post('posts/add', 'PostController@add');
 
+// Employee crud
 Route::get('employees', 'EmployeesController@index');
 Route::post('employees', 'EmployeesController@store');
 Route::get('employees/{id}', 'EmployeesController@show');
 Route::put('employees/{id}', 'EmployeesController@update');
 Route::delete('employees/{id}', 'EmployeesController@destroy');
 
-
+//Fileuplaod
+Route::get('employees', 'EmployeesController@index');
+Route::post('employees', 'EmployeesController@store');
 
 // Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
