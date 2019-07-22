@@ -125,20 +125,4 @@ class EmployeesController extends Controller {
         $data['files'] = Fileupload::all();
         return response()->json(compact( 'data'));
     }
-
-
-    public function filedelete($id)
-    {
-        try {
-            $employee = Fileupload::where('id', $id)->first();
-            if ($employee != null) {
-                Fileupload::where('id', $id)->delete();
-            } else {
-                return response()->json(array('message' => 'file_not_found'), 200);
-            }
-            return response()->json(array('status' => true, 'message' => 'file_deleted'), 200);
-        } catch (\Exception $e) {
-            return response()->json(array('message' => 'could_not_file'), 500);
-        }
-    }
 }

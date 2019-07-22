@@ -35,7 +35,7 @@ Route::delete('employees/{id}', 'EmployeesController@destroy');
 //Fileuplaod
 Route::get('fileupload', 'EmployeesController@filelist');
 Route::post('fileupload', 'EmployeesController@fileupload');
-Route::post('filedelete/{id}', 'EmployeesController@filedelete');
+Route::delete('filedelete/{id}', 'EmployeesController@filedelete');
 
 // Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
