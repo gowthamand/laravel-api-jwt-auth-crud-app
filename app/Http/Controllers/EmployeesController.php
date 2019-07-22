@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
+use App\Fileupload;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\FileUploadController;
@@ -14,13 +15,11 @@ class EmployeesController extends Controller {
         $this->middleware('jwt-auth');
     }
 
-
     public function index() {
         $data['status'] = true;
         $data['employees'] = Employee::all();
         return response()->json(compact( 'data'));
     }
-
 
     public function store(Request $request)
     {
@@ -51,7 +50,6 @@ class EmployeesController extends Controller {
             return response()->json(array('message' => 'could_not_create_employee'), 500);
         }
     }
-
 
     public function show($id)
     {
@@ -90,7 +88,6 @@ class EmployeesController extends Controller {
         }
     }
 
-
     public function destroy($id)
     {
         try {
@@ -106,9 +103,7 @@ class EmployeesController extends Controller {
         }
     }
 
-
     public function fileupload(Request $request){
-
         $validator = Validator::make($request->all(), [
             'file' => 'required'
         ]);
@@ -119,10 +114,15 @@ class EmployeesController extends Controller {
             if (isset($data['file'])) {
                 $file = $data['file'];
                 unset($data['file']);
-                $data['image'] = FileUploadController::fileUpload($file, 'uploads/students');
+                $data['name'] = FileUploadController::fileUpload($file, 'uploads/students');
             }
             Fileupload::create($data);
             return response()->json(array('status' => true, 'msg' => 'Successfully created'), 200);
         }
+    }
+
+    public function filelist(){
+        $data['files'] = Fileupload::all();
+        return response()->json(compact( 'data'));
     }
 }

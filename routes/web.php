@@ -33,8 +33,8 @@ Route::put('employees/{id}', 'EmployeesController@update');
 Route::delete('employees/{id}', 'EmployeesController@destroy');
 
 //Fileuplaod
-Route::get('employees', 'EmployeesController@index');
-Route::post('employees', 'EmployeesController@store');
+Route::get('fileupload', 'EmployeesController@filelist');
+Route::post('fileupload', 'EmployeesController@fileupload');
 
 // Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
