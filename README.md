@@ -47,3 +47,21 @@ If you have any kind of doubt or query please send an e-mail to Gowthaman D via 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Login
+![laravel-api-jwt](public/img/login.PNG)
+## Register
+![laravel-api-jwt](public/img/register.PNG)
+## Employee List
+![laravel-api-jwt](public/img/employee_list.PNG)
+## Add Employee 
+![laravel-api-jwt](public/img/create_emp.PNG)
+## GET Employee 
+![laravel-api-jwt](public/img/get_emp_details.PNG)
+## Update Employee 
+![laravel-api-jwt](public/img/Update_emp.PNG)
+## Delete Employee 
+![laravel-api-jwt](public/img/delete_employe.PNG)
+## Uploaded File List 
+![laravel-api-jwt](public/img/files_uploaded_list.PNG)
+## File Uploaded 
+![laravel-api-jwt](public/img/file_upload.PNG)
